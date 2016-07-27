@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="Start">Start</string>
+    <string name="Language">Language</string>
+    <string name="VideoLearing">Video learing</string>
+    <string name="LookAndChoose">Look and choose</string>
+    <string name="ListenAndGuess">Listen and guess</string>
+    <string name="Quiz">Quiz</string>
+</resources>

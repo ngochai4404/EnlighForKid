@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Android\\Demo\\Demo\\activity-Transition\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\activity_main.xml",
+        "source": "D:\\Android\\Demo\\Demo\\activity-Transition\\build\\intermediates\\bundles\\debug\\res\\menu\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Hai\\Demo\\activity-Transition\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\activity_main.xml",
+        "source": "D:\\Hai\\Demo\\activity-Transition\\build\\intermediates\\bundles\\debug\\res\\menu\\activity_main.xml"
+    },
+    {
+        "merged": "G:\\Android\\ProPTIT\\EnglishForProPTIT\\Demo\\activity-Transition\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\activity_main.xml",
+        "source": "G:\\Android\\ProPTIT\\EnglishForProPTIT\\Demo\\activity-Transition\\build\\intermediates\\bundles\\debug\\res\\menu\\activity_main.xml"
+    }
+]

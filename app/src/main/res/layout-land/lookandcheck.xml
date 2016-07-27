@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bgchung_ngang"
+    android:weightSum="11"
+
+    >
+    <!--<TextView-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/LookAndChoose_text"-->
+    <!--android:text="Câu hỏi hiện tại : "-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="25dp"-->
+    <!--/>-->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="5"
+        android:orientation="horizontal"
+        android:background="#64B5F6">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/LookAndChoose_text"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="0/20"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="@dimen/activity_horizontal_margin"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="7"
+        android:layout_margin="5dp"
+        >
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/LookAndChoose_img"
+            android:layout_gravity="center"
+
+            android:layout_weight="2"
+            android:layout_margin="3dp"/>
+
+        <ImageView
+            android:id="@+id/LookAndChoose_imgview"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_weight="2"
+            android:layout_margin="3dp"
+            android:src="@drawable/pregunta" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+
+        >
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/LookAndChoose_btn1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#F06292"
+            fancy:fb_focusColor="#FCE4EC"
+            fancy:fb_radius="15dp"
+            fancy:fb_textSize="20dp"
+            fancy:fb_text="SHUFFLE PLAY"
+            fancy:fb_textColor="#FAFAFA"
+            />
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/LookAndChoose_btn2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            fancy:fb_textSize="20dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#F06292"
+            fancy:fb_focusColor="#FCE4EC"
+            fancy:fb_radius="15dp"
+            fancy:fb_text="SHUFFLE PLAY"
+            fancy:fb_textColor="#FAFAFA"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        >
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/LookAndChoose_btn3"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            fancy:fb_textSize="20dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#F06292"
+            fancy:fb_focusColor="#FCE4EC"
+            fancy:fb_radius="15dp"
+            fancy:fb_text="SHUFFLE PLAY"
+            fancy:fb_textColor="#FAFAFA"
+            />
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/LookAndChoose_btn4"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            fancy:fb_textSize="20dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#F06292"
+            fancy:fb_focusColor="#FCE4EC"
+            fancy:fb_radius="15dp"
+            fancy:fb_text="SHUFFLE PLAY"
+            fancy:fb_textColor="#FAFAFA"
+            />
+    </LinearLayout>
+    <!--<LinearLayout-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/left"-->
+    <!--android:layout_margin="10dp"-->
+    <!--/>-->
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/tick"-->
+    <!--android:layout_margin="10dp"-->
+    <!--/>-->
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@drawable/right"-->
+    <!--android:layout_margin="10dp"-->
+    <!--/>-->
+    <!--</LinearLayout>-->
+</LinearLayout>

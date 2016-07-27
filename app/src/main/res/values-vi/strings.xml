@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="Start">Bắt đầu</string>
+    <string name="Language">Ngôn ngữ</string>
+    <string name="VideoLearing">Học qua video</string>
+    <string name="LookAndChoose">Xem và chọn</string>
+    <string name="ListenAndGuess">Nghe và đoán</string>
+    <string name="Quiz">Câu đố</string>
+
+</resources>

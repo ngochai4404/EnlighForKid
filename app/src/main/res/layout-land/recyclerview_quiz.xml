@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+
+        >
+    <android.support.v7.widget.RecyclerView
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:id="@+id/listRecycleView"
+        android:layout_height="match_parent"
+
+
+        android:scrollbars="vertical"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="4">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/newgame_recycleview"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#ec407a"
+            fancy:fb_focusColor="#00e676"
+            fancy:fb_radius="20dp"
+            fancy:fb_text="New Game"
+            fancy:fb_textSize="20sp"
+            fancy:fb_textGravity="left"
+            fancy:fb_textColor="#FFFFFF" />
+    </LinearLayout>
+
+</LinearLayout>

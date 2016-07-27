@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.nam.demo">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon2"
+        android:label="EnglishForKids"
+        android:supportsRtl="true"
+        tools:replace="icon, label"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Menu.MainActivity"
+            android:configChanges="keyboardHidden">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Quiz.Quiz"
+            android:configChanges="keyboardHidden"
+           ></activity>
+        <activity android:name=".VideoLearning.VideoLearning"
+            android:configChanges="keyboardHidden"></activity>
+        <activity android:name=".LookAndChoose.LookAndChoose"
+            android:configChanges="keyboardHidden"></activity>
+        <activity android:name=".Start.start"
+            android:configChanges="keyboardHidden"></activity>
+        <activity android:name=".ListenAndGuess.ListenAndGuess"
+            android:configChanges="keyboardHidden"></activity>
+        <activity android:name=".Start.startview"
+            android:configChanges="keyboardHidden"></activity>
+    </application>
+
+</manifest>
