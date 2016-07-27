@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,10 +35,11 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
     private ImageView listen_and_guess_iv3;
     private ImageView listen_and_guess_iv4;
     private ProgressBar progressBar;
+    private boolean screenRotate = true;
     private ImageView listen_and_guess_imgview;
     private ImageButton listen_and_guess_imagebutton;
     private MediaPlayer mp3 = null;
-    int ques = 0, demsocau = 0, trueQues;
+    int ques = 0, demsocau = 1, trueQues;
     private ImageDrawable imageDrawable = new ImageDrawable();
     private int testRandom[] = new int[5];
     private int valueProgressBar = 0;
@@ -54,7 +54,6 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listenandguess);
-
         listen_and_guess_iv1 = (ImageView) findViewById(R.id.listen_and_guess_iv1);
         listen_and_guess_iv1.setOnClickListener(this);
 
@@ -74,7 +73,6 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
         progressBar.setProgress(0);
         progressBar.setMax(200);
 
-        Log.d("TAG123", "mp3");
         list = imageDrawable.list("list");
         if (savedInstanceState == null) {
             chooseQues();
@@ -171,16 +169,28 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
     }
 
     public void sleepThread(int s) {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                valueProgressBar += 10;
-                progressBar.setProgress(valueProgressBar);
-                if (demsocau < 20)
-                    chooseQues();
+        if (ques >= 20) {
+            dialog_winner();
+        }
+        else {
+            screenRotate = false;
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    if(screenRotate==false) {
+                        valueProgressBar += 10;
+                        progressBar.setProgress(valueProgressBar);
+                        chooseQues();
+                        ques++;
+                        demsocau++;
+                        quest();
+                        //imageDrawable.removeQues(testRandom[4], x[4], y[4]);
+                        screenRotate=true;
 
-            }
-        }, s);
+                    }
+                }
+            }, s);
+        }
 
     }
 
@@ -195,100 +205,93 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.listen_and_guess_iv1:
                 if (testRandom[0] == testRandom[4]) {
+                    if(ques>=20){
+
+                        dialog_winner();
+                        return;
+                    }
                     correct();
                     YoYo.with(Techniques.Flash)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv1));
                     sleepThread(1000);
-                    ques++;
-                    demsocau++;
-                    quest();
-                    imageDrawable.removeQues(testRandom[4], x[4], y[4]);
-                    if (demsocau == 19) {
-                        dialog_winner();
-                    }
+
                 } else {
                     wrong();
                     YoYo.with(Techniques.Shake)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv1));
                     wrongAnswer--;
-                    if(wrongAnswer == 0){
+                    if (wrongAnswer == 0) {
                         dialog_fail();
                     }
                 }
                 break;
             case R.id.listen_and_guess_iv2:
                 if (testRandom[1] == testRandom[4]) {
+                    if(ques>=20){
+                        dialog_winner();
+                        return;
+                    }
                     correct();
                     YoYo.with(Techniques.Flash)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv2));
                     sleepThread(1000);
-                    ques++;
-                    demsocau++;
-                    quest();
-                    imageDrawable.removeQues(testRandom[4], x[4], y[4]);
-                    if (demsocau == 19) {
-                        dialog_winner();
-                    }
+
                 } else {
                     wrong();
                     YoYo.with(Techniques.Shake)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv2));
                     wrongAnswer--;
-                    if(wrongAnswer == 0){
+                    if (wrongAnswer == 0) {
                         dialog_fail();
                     }
                 }
                 break;
             case R.id.listen_and_guess_iv3:
                 if (testRandom[2] == testRandom[4]) {
+                    if(ques>=20){
+                        dialog_winner();
+                        return;
+                    }
                     correct();
                     YoYo.with(Techniques.Flash)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv3));
                     sleepThread(1000);
-                    ques++;
-                    demsocau++;
-                    quest();
-                    imageDrawable.removeQues(testRandom[4], x[4], y[4]);
-                    if (demsocau == 19) {
-                        dialog_winner();
-                    }
+
                 } else {
                     wrong();
                     YoYo.with(Techniques.Shake)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv3));
                     wrongAnswer--;
-                    if(wrongAnswer == 0){
+                    if (wrongAnswer == 0) {
                         dialog_fail();
                     }
                 }
                 break;
             case R.id.listen_and_guess_iv4:
                 if (testRandom[3] == testRandom[4]) {
+                    if(ques>=20){
+                        dialog_winner();
+                        return;
+                    }
                     correct();
                     YoYo.with(Techniques.Flash)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv4));
                     sleepThread(1000);
-                    ques++;
-                    demsocau++;
-                    quest();
-                    imageDrawable.removeQues(testRandom[4], x[4], y[4]);
-                    if (demsocau == 19) {
-                        dialog_winner();
-                    }
+
                 } else {
                     wrong();
                     YoYo.with(Techniques.Shake)
                             .duration(700)
                             .playOn(findViewById(R.id.listen_and_guess_iv4));
                     wrongAnswer--;
-                    if(wrongAnswer == 0){
+                    if (wrongAnswer == 0) {
                         dialog_fail();
                     }
                 }
@@ -345,28 +348,37 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
         // Save UI state changes to the savedInstanceState.
         // This bundle will be passed to onCreate ifut the process isa
         // killed and restarted.);
+        if (screenRotate == false&&ques<19) {
+            screenRotate = true;
+            valueProgressBar += 10;
+            progressBar.setProgress(valueProgressBar);
+            chooseQues();
+            ques++;
+            demsocau++;
+            quest();
+       //     imageDrawable.removeQues(testRandom[4], x[4], y[4]);
 
+        }
+        super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putInt("MyInt1", testRandom[0]);
         savedInstanceState.putInt("MyInt2", testRandom[1]);
         savedInstanceState.putInt("MyInt3", testRandom[2]);
         savedInstanceState.putInt("MyInt4", testRandom[3]);
         savedInstanceState.putInt("MyInt5", testRandom[4]);
-//
-
 
         savedInstanceState.putInt("ques", ques);
         savedInstanceState.putInt("value", valueProgressBar);
-        // etc.
 
-    }
+
+}
 
     //onRestoreInstanceState
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    public void onRestoreInstanceState( Bundle savedInstanceState) {
+
         super.onRestoreInstanceState(savedInstanceState);
         testRandom[0] = savedInstanceState.getInt("MyInt1");
         testRandom[1] = savedInstanceState.getInt("MyInt2");
@@ -379,6 +391,10 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
         reQuest();
         quest();
         progressBar.setProgress(valueProgressBar);
+        if(ques>=20){
+            dialog_winner();
+            return;
+        }
 
     }
 
@@ -404,13 +420,15 @@ public class ListenAndGuess extends Activity implements View.OnClickListener {
         toast.setView(layout);
         toast.show();
     }
-    private static void doKeepDialog(Dialog dialog){
+
+    private static void doKeepDialog(Dialog dialog) {
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         dialog.getWindow().setAttributes(lp);
     }
+
     public void dialog_fail() {
 
         SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
